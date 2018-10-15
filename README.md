@@ -1,4 +1,4 @@
-# How The Internet Works
+# How The World Wide Web Works
 
 ---
 
@@ -74,9 +74,12 @@ A URL (Universal Resource Locator) is a type of URI (Universal Resource Identifi
 A URL is meant to be a unique identifier for a "resource", or a piece of content, that can be accessed via the world wide web. 
 
 A URL consists of: 
+  
 
-(protocol) [subdomain.] (domain name)  [:port]  [/path]  [?query&query]
-https://       blog.      frogs.com     :443     /search  ?color=green
+ protocol     [subdomain.]      domain       [:port]    [/path]    [?query]
+----------   --------------  ------------   ---------  ---------  -----------
+ http://        blog.         science.com     :443       /foo       ?bar=baz
+
 
 ---
 
@@ -101,6 +104,16 @@ Ports are like doors.
 Every computer connected to the internet has thousands of potential ports.
 
 A server is a piece of software that runs on a computer, and "listens" for HTTP requests on a certain port.
+
+---
+
+
+## Default Ports
+
+* HTTP requests default to port 80
+* HTTPS requests default to port 443
+
+Most web pages serve content on the default ports, and as such, we drop the port from the URL.
 
 ---
 
@@ -173,13 +186,15 @@ Clicking on each request will allow you to inspect it!
 
 ## Inspector (Chrome)
 
-Screenshot
+
+![](./chrome-inspector.png){height=275px}
 
 ---
 
 ## Inspector (Firefox)
 
-Screenshot
+![](./firefox-inspector.png){height=275px}
+
 
 ---
 
@@ -270,6 +285,25 @@ API's (application programming interfaces) commonly use JSON to send data.
 
 ---
 
+## JSON
+
+An example of JSON: 
+
+```{js}
+
+{
+    "id": "b4vd345s45gd",
+    "tweets": [12543, 9878945, 90384]
+    "profile": { 
+        "name": "Man Onthe Moon",
+        "location": "moon"
+    }
+}
+
+```
+
+---
+
 ## HTML
 
 Hyper Text Markup Language. 
@@ -286,16 +320,148 @@ For example: if you have a heading (title) followed by two paragraphs. You need 
 
 HTML is a tree. It organizes all the content for the browser into a hierarchical taxonomy. 
 
+```{html}
 
+                  |-- meta qux
+       |-- head --|
+       |          |-- script baz
+html --| 
+       |          |-- div.foo
+       |-- body --|
+                  |-- div.bar
+```
 
 
 ---
 
-<!-- ## Default Ports -->
+## HTML
 
-<!-- * HTTP requests default to port 80 -->
-<!-- * HTTPS requests default to port 443 -->
+The root node is called "html", which has only two possible child nodes, "head" and "body." Those two nodes can have unlimited children. 
 
-<!-- Most web pages serve content on the default ports, and as such, we drop the port from the URL. -->
+```{html}
+<html>
+    <head>
+        ...
+    </head>
+    <body> 
+        <div class="foo"></div>
+        <div class="bar"></div>
+    </body>
+</html>
 
-<!-- --- -->
+```
+
+---
+
+## HTML
+
+Each node of the tree is an "HTML element."
+
+Some common elements:
+
+```{html}
+<div>
+<p>
+<span>
+<h1>
+<a>
+```
+
+---
+
+## HTML
+
+In addition to having children and/or text, each element can have "attributes." Some common attributes are "id" and "class":
+
+```{html}
+<div id="foo"> 
+    <span class="email"> man@themoon.space </span>
+</div>
+
+```
+
+---
+
+## HTML
+
+Elements, classes, and ids give us a way to traverse the HTML tree and target a specific node (and its subtree!)
+
+This is very important. This is used in styling webpages as well as in web scraping. 
+
+Let's see an example:
+
+---
+
+## HTML
+
+```{html}
+<body>
+    <div class="foo"> 
+        <h3> EMAIL </h3>
+        <span id="email"> man@themoon.space </span>
+    </div>
+    <article class="bar">
+        <span> My Day </span>
+        <p> Hello, I would like to discuss...</p>
+    </article>
+</body>
+```
+
+---
+
+## HTML
+
+
+Using CSS notation, we can target the email via: 
+
+```{css}
+div.foo span#email
+```
+
+Additionally, we could simplify it to:
+
+```{css}
+.foo span
+```
+
+Because there is only one element with the class "foo", and only one span element inside that! 
+
+Or, because there is an id, we can use that and nothing else: 
+
+```{css}
+#email
+```
+
+---
+
+
+## HTML
+
+(example with browser inspector on live webpage) 
+
+---
+
+## HTML
+
+Some elements have special attributes. 
+
+Anchor tags can have an "href" attribute, which is a link to another page. Anchor links and hrefs form the basis of the internet!
+
+```{html}
+<a href="https://man.mars/redmanred"> 
+    Checkout my buddy's homepage! 
+</a>
+```
+
+---
+
+## HTML
+
+The head element contains the metadata for the webpage, as well as additional links to CSS and Javascript. 
+
+CSS is a language for applying "styling" to a page.
+
+Javascript is a programming language that runs dynamically in the browser. 
+
+---
+
