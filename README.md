@@ -1,18 +1,19 @@
-# How The World Wide Web Works
-
+---
+title: How the World Wide Web Works
+date: September, 2018
 ---
 
 ## HTTP
 
-Hyper Text Transfer Protocol. 
+Hyper Text Transfer Protocol.
 
-HTTP is a protocol, which is to say a set of rules and formats, that allows one computer to get content from another computer. 
+HTTP is a protocol, which is to say a set of rules and formats, that allows one computer to get content from another computer.
 
 ---
 
 ## Client and Server
 
-HTTP is assymetric. One computer requests the content, while the other computer serves the content. 
+HTTP is assymetric. One computer requests the content, while the other computer serves the content.
 
 The computer requesting the content is the "client."
 
@@ -24,12 +25,12 @@ You can think of HTTP as similar to the transaction that happens in a restaurant
 
 ## Visiting a web page
 
-When you visit twitter.com: 
+When you visit twitter.com:
 
 * Your browser (i.e. Firefox) is the client.
 * The server is some custom-built software running in Twitter's cloud infrastructure somewhere.
 
-Note that the client and the server are just software, they don't need to be (but usually are) running on separate physical hardware. 
+Note that the client and the server are just software, they don't need to be (but usually are) running on separate physical hardware.
 
 ---
 
@@ -44,7 +45,7 @@ When you visit twitter.com, your browser (the client) makes an HTTP request, and
 
 ## HTTP Methods
 
-There are several types of requests the client can make. The type of the request is called the "method." There are several HTTP methods the client can choose from, but for now we will focus on one method: 
+There are several types of requests the client can make. The type of the request is called the "method." There are several HTTP methods the client can choose from, but for now we will focus on one method:
 
 GET
 
@@ -52,14 +53,14 @@ GET requests are the most common type of request when browsing the internet. It'
 
 ---
 
-## Requests 
+## Requests
 
-GET requests consist of: 
+GET requests consist of:
 
 * URL
 * Additional Metadata
 
-Responses consist of: 
+Responses consist of:
 
 * Body (content)
 * Status Code
@@ -71,10 +72,10 @@ Responses consist of:
 
 A URL (Universal Resource Locator) is a type of URI (Universal Resource Identifier).
 
-A URL is meant to be a unique identifier for a "resource", or a piece of content, that can be accessed via the world wide web. 
+A URL is meant to be a unique identifier for a "resource", or a piece of content, that can be accessed via the world wide web.
 
-A URL consists of: 
-  
+A URL consists of:
+
 
  protocol     [subdomain.]      domain       [:port]    [/path]    [?query]
 ----------   --------------  ------------   ---------  ---------  -----------
@@ -83,11 +84,11 @@ A URL consists of:
 
 ---
 
-## Protocol 
+## Protocol
 
-HTTP is unencrypted. 
+HTTP is unencrypted.
 
-HTTPS is encrypted. 
+HTTPS is encrypted.
 
 ---
 
@@ -99,7 +100,7 @@ Every computer connected to the internet lives at a certain address (domain/subd
 
 ## Ports
 
-Ports are like doors. 
+Ports are like doors.
 
 Every computer connected to the internet has thousands of potential ports.
 
@@ -119,20 +120,20 @@ Most web pages serve content on the default ports, and as such, we drop the port
 
 ## Servers
 
-It's the internet's job to direct the HTTP request to the right address. 
+It's the internet's job to direct the HTTP request to the right address.
 
-It's the computer's job to direct the HTTP request to the right port. 
+It's the computer's job to direct the HTTP request to the right port.
 
-Then, it's up to the server listening on that port to send a response. 
+Then, it's up to the server listening on that port to send a response.
 
 
 ---
 
 ## Path
 
-From one server, we often want to serve lots of different content. 
+From one server, we often want to serve lots of different content.
 
-Like the menu of a restaraunt. 
+Like the menu of a restaraunt.
 
 A path is a unique identifier for each piece of content the server can provide (each item on the menu)
 
@@ -142,7 +143,7 @@ Paths are trees! Just like menus are organized categorically by their creators (
 
 ## Query String
 
-In a restaraunt, the food might be like: 
+In a restaraunt, the food might be like:
 
 - Burritos
  -- Chimichangas
@@ -160,7 +161,7 @@ Cheese: Queso Fresco, Vegan Cheese
 
 Sometimes we want to allow options for each piece of content. A query string is a collection of key-value pairs (like a Python dictionary) that describe the content requested.
 
-A Grande Burrito with Soyrzo and Vegan Cheese would look like this in a URL: 
+A Grande Burrito with Soyrzo and Vegan Cheese would look like this in a URL:
 
 https://myburrito.com/burritos/grande?meat=soyrizo&cheese=vegan
 
@@ -174,11 +175,11 @@ Paths and query strings are nothing but a way for the server to organize its con
 
 ## Examining HTTP Requests and Responses
 
-All modern browsers have a way for you to "inspect" the details of each HTTP request the browser makes, and each HTTP response the browser receives. 
+All modern browsers have a way for you to "inspect" the details of each HTTP request the browser makes, and each HTTP response the browser receives.
 
-It is very important to get familiar with the "inspector" feature of your browser. 
+It is very important to get familiar with the "inspector" feature of your browser.
 
-In the "inspector" window, there will be a tab called "network". This shows a list of all the requests that have been made. Sometimes, you will need to reload the page after opening the tab. 
+In the "inspector" window, there will be a tab called "network". This shows a list of all the requests that have been made. Sometimes, you will need to reload the page after opening the tab.
 
 Clicking on each request will allow you to inspect it!
 
@@ -200,7 +201,7 @@ Clicking on each request will allow you to inspect it!
 
 ## Responses
 
-Again, the responses consist of: 
+Again, the responses consist of:
 
 * Body (content)
 * Status Code
@@ -212,9 +213,9 @@ Again, the responses consist of:
 
 In the HTTP GET Request, the client has requested a piece of content.
 
-Status codes are a way for the server to tell the client whether the request can be handled. 
+Status codes are a way for the server to tell the client whether the request can be handled.
 
-Again, imagine the restaurant. The server at a restaurant needs to be able to tell you: 
+Again, imagine the restaurant. The server at a restaurant needs to be able to tell you:
 
 * "OK, coming right up".
 * "Sorry, you're not allowed to have that, you're 12 years old and ordering whiskey".
@@ -225,7 +226,7 @@ Again, imagine the restaurant. The server at a restaurant needs to be able to te
 
 ## Status Codes
 
-HTTP, as a protocol, consists of a bunch of 3-digit numbers to communicate these basic responses. Some of the most common are: 
+HTTP, as a protocol, consists of a bunch of 3-digit numbers to communicate these basic responses. Some of the most common are:
 
 * 200: OK
 * 400: Malformed Request
@@ -236,10 +237,10 @@ HTTP, as a protocol, consists of a bunch of 3-digit numbers to communicate these
 ---
 
 ## Body
+p
+Content that is sent from the server to the client is referred to as the "body" of the response.
 
-Content that is sent from the server to the client is referred to as the "body" of the response. 
-
-Content comes in raw bytes, and can consist of anything. It's a flexible format, such that any type of content can be sent from server to client. 
+Content comes in raw bytes, and can consist of anything. It's a flexible format, such that any type of content can be sent from server to client.
 
 The server needs some way to tell the client what type of data is in the body!
 
@@ -247,11 +248,11 @@ The server needs some way to tell the client what type of data is in the body!
 
 ## Headers
 
-All metadata sent in HTTP requests and responses lives in the "headers". 
+All metadata sent in HTTP requests and responses lives in the "headers".
 
 The headers are just a collection of key-value pairs.
 
-Status codes live in the headers. The key is "status" and the value is the code number! 
+Status codes live in the headers. The key is "status" and the value is the code number!
 
 Another common header in HTTP Responses exists under the key "Content-Type". This tells the client what type of content is in the body, and thus how to decode it.
 
@@ -259,7 +260,7 @@ Another common header in HTTP Responses exists under the key "Content-Type". Thi
 
 ## Content-Types
 
-There are 3 main content types you should know about: 
+There are 3 main content types you should know about:
 
 * Plain text
 * HTML
@@ -269,7 +270,7 @@ There are 3 main content types you should know about:
 
 ## Plain Text
 
-Plain text is the simplest form of content. It is not used very often in actual applications. 
+Plain text is the simplest form of content. It is not used very often in actual applications.
 
 ---
 
@@ -277,7 +278,7 @@ Plain text is the simplest form of content. It is not used very often in actual 
 
 JavaScript Object Notation.
 
-An "object" in JavaScript is similar to a Dictionary in python. It's an associative data structure, a collection of key-value pairs! 
+An "object" in JavaScript is similar to a Dictionary in python. It's an associative data structure, a collection of key-value pairs!
 
 JSON is the most common format for sending data over HTTP when the data is meant to be consumed by a computer program, rather than presented for a human to view.
 
@@ -287,14 +288,14 @@ API's (application programming interfaces) commonly use JSON to send data.
 
 ## JSON
 
-An example of JSON: 
+An example of JSON:
 
 ```{js}
 
 {
     "id": "b4vd345s45gd",
     "tweets": [12543, 9878945, 90384]
-    "profile": { 
+    "profile": {
         "name": "Man Onthe Moon",
         "location": "moon"
     }
@@ -306,11 +307,11 @@ An example of JSON:
 
 ## HTML
 
-Hyper Text Markup Language. 
+Hyper Text Markup Language.
 
-HTML is a format used to encode content, so that it can be displayed for humans to read in a web browser. 
+HTML is a format used to encode content, so that it can be displayed for humans to read in a web browser.
 
-HTML tells the browser what to display, and how to display it. 
+HTML tells the browser what to display, and how to display it.
 
 For example: if you have a heading (title) followed by two paragraphs. You need to tell the browser not only about the order of the text, but to make the heading larger and bolder, and to separate the paragraphs with a new line!
 
@@ -318,14 +319,14 @@ For example: if you have a heading (title) followed by two paragraphs. You need 
 
 ## HTML
 
-HTML is a tree. It organizes all the content for the browser into a hierarchical taxonomy. 
+HTML is a tree. It organizes all the content for the browser into a hierarchical taxonomy.
 
 ```{html}
 
                   |-- meta qux
        |-- head --|
        |          |-- script baz
-html --| 
+html --|
        |          |-- div.foo
        |-- body --|
                   |-- div.bar
@@ -336,14 +337,14 @@ html --|
 
 ## HTML
 
-The root node is called "html", which has only two possible child nodes, "head" and "body." Those two nodes can have unlimited children. 
+The root node is called "html", which has only two possible child nodes, "head" and "body." Those two nodes can have unlimited children.
 
 ```{html}
 <html>
     <head>
         ...
     </head>
-    <body> 
+    <body>
         <div class="foo"></div>
         <div class="bar"></div>
     </body>
@@ -374,7 +375,7 @@ Some common elements:
 In addition to having children and/or text, each element can have "attributes." Some common attributes are "id" and "class":
 
 ```{html}
-<div id="foo"> 
+<div id="foo">
     <span class="email"> man@themoon.space </span>
 </div>
 
@@ -386,7 +387,7 @@ In addition to having children and/or text, each element can have "attributes." 
 
 Elements, classes, and ids give us a way to traverse the HTML tree and target a specific node (and its subtree!)
 
-This is very important. This is used in styling webpages as well as in web scraping. 
+This is very important. This is used in styling webpages as well as in web scraping.
 
 Let's see an example:
 
@@ -396,7 +397,7 @@ Let's see an example:
 
 ```{html}
 <body>
-    <div class="foo"> 
+    <div class="foo">
         <h3> EMAIL </h3>
         <span id="email"> man@themoon.space </span>
     </div>
@@ -412,7 +413,7 @@ Let's see an example:
 ## HTML
 
 
-Using CSS notation, we can target the email via: 
+Using CSS notation, we can target the email via:
 
 ```{css}
 div.foo span#email
@@ -424,9 +425,9 @@ Additionally, we could simplify it to:
 .foo span
 ```
 
-Because there is only one element with the class "foo", and only one span element inside that! 
+Because there is only one element with the class "foo", and only one span element inside that!
 
-Or, because there is an id, we can use that and nothing else: 
+Or, because there is an id, we can use that and nothing else:
 
 ```{css}
 #email
@@ -437,19 +438,19 @@ Or, because there is an id, we can use that and nothing else:
 
 ## HTML
 
-(example with browser inspector on live webpage) 
+(example with browser inspector on live webpage)
 
 ---
 
 ## HTML
 
-Some elements have special attributes. 
+Some elements have special attributes.
 
 Anchor tags can have an "href" attribute, which is a link to another page. Anchor links and hrefs form the basis of the internet!
 
 ```{html}
-<a href="https://man.mars/redmanred"> 
-    Checkout my buddy's homepage! 
+<a href="https://man.mars/redmanred">
+    Checkout my buddy's homepage!
 </a>
 ```
 
@@ -457,11 +458,10 @@ Anchor tags can have an "href" attribute, which is a link to another page. Ancho
 
 ## HTML
 
-The head element contains the metadata for the webpage, as well as additional links to CSS and Javascript. 
+The head element contains the metadata for the webpage, as well as additional links to CSS and Javascript.
 
 CSS is a language for applying "styling" to a page.
 
-Javascript is a programming language that runs dynamically in the browser. 
+Javascript is a programming language that runs dynamically in the browser.
 
 ---
-
